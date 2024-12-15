@@ -24,6 +24,7 @@ function Patients() {
     filter === "all"
       ? patients
       : patients.filter((ele) => ele.status === filter);
+
   function hendellAddpetinet(e) {
     e.preventDefault();
     if (name.length < 3 || phone.length !== 10) {
@@ -37,14 +38,14 @@ function Patients() {
         phone,
         blood,
         booking: "مباشر",
-        date: new Date().now,
+        date: new Date(Date.now()).toLocaleDateString("en-US"),
         status: "waiting",
       });
       toast.success("تم الاضافة بنجاح");
 
       etNewch(false);
-    } catch {
-      console.log("erorr");
+    } catch (e) {
+      console.log(e);
     }
   }
   const hendelDelete = (id) => {
