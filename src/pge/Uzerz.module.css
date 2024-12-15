@@ -1,0 +1,252 @@
+.cochez {
+  padding: 30px 35px;
+}
+.coches {
+  padding: 0px !important;
+  overflow: hidden;
+}
+.cocheheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  background-color: var(--min-color);
+  padding: 8px;
+}
+.cocheheader span {
+  color: #fff;
+  display: block;
+  width: 20%;
+  text-transform: uppercase;
+  font-size: 25px;
+  text-align: center;
+}
+.coches {
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid var(--min-color);
+  border-radius: 20px;
+  /* background-color: #; */
+}
+.coche {
+  width: 100%;
+  margin: 20px 0;
+  /* background: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-size: 18px;
+  padding: 8px 50px;
+  /* color: var(--min-color); */
+}
+.coche:nth-child(even) {
+  background-color: var(--bg-light-color);
+}
+.coche::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  bottom: -10px;
+  height: 2px;
+  background-color: var(--min-color);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.coche:last-of-type:after {
+  display: none;
+}
+.coche div {
+  width: 20%;
+  text-align: center;
+}
+.coche div:not(:first-child) {
+  /* text-align: center; */
+}
+.coche div:nth-of-type(5) {
+  /* text-align: justify; */
+}
+.coche img {
+  width: 100px;
+  border: 1px solid var(--min-color);
+  border-radius: 50%;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+}
+.icon span {
+  display: inline-block;
+  font-size: 22px;
+  margin: 10px;
+  cursor: pointer;
+}
+.new_choche {
+  display: block;
+  background-color: var(--min-color);
+  color: #fff;
+  width: 400px;
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+}
+.new_choche:hover {
+  background-color: var(--light-min-color);
+  box-shadow: 1px 3px 20px var(--text-min-color);
+}
+.new_coche_form {
+  direction: ltr;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: var(--min-color) solid 3px;
+  width: 90%;
+  border-radius: 25px;
+  background-image: linear-gradient(
+      110deg,
+      white 0%,
+      white 50%,
+      transparent 50%
+    ),
+    url("../../imgz/2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.new_coche_form h3 {
+  font-size: 30px;
+  text-align: center;
+  color: var(--min-color);
+  text-transform: uppercase;
+  margin: 25px;
+}
+.continer {
+  width: 70%;
+  display: flex;
+  padding: 25px 80px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.form_control {
+  position: relative;
+}
+.select_conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.select_conteiner div {
+  display: flex;
+  gap: 20px;
+}
+.select_conteiner select {
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+label {
+  color: var(--min-color);
+}
+input {
+  max-width: 90%;
+}
+input:placeholder-shown + label,
+textarea:placeholder-shown + label {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  left: 12px;
+}
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+  position: absolute;
+  top: 0px;
+  opacity: 1;
+  left: 12px;
+}
+.form_control input {
+  padding: 8px 12px;
+  width: 400px !important;
+  display: inline-block;
+  margin: 20px 0;
+  border: 1px solid var(--min-color);
+  resize: none;
+  outline: none;
+}
+
+i,
+i a {
+  color: var(--min-color);
+  font-weight: bold;
+  font-size: 36px;
+}
+.filter {
+  width: 80%;
+  display: flex;
+  padding: 25px 80px;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.filter button {
+  display: block;
+  background-color: var(--min-color);
+  color: #fff;
+  width: 200px;
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+}
+.filter button:hover {
+  background-color: var(--light-min-color);
+  box-shadow: 1px 3px 20px var(--text-min-color);
+}
+@media (max-width: 600px) {
+  input {
+    max-width: 250px;
+  }
+  .cochez {
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 850px) {
+  .cocheheader {
+    display: none !important;
+  }
+  .coche {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .cochez {
+    padding: 10px 10px;
+  }
+  .filter {
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    width: 100%;
+  }
+  .filter button {
+    max-width: 45%;
+    width: 45%;
+    margin: 10px !important;
+  }
+}

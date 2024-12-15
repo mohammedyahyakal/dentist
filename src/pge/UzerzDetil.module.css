@@ -1,0 +1,97 @@
+.new_choche {
+  display: block;
+  background-color: var(--min-color);
+  color: #fff;
+  width: 400px;
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+}
+.new_coche_form {
+  direction: ltr;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: var(--min-color) solid 3px;
+  width: 90%;
+  border-radius: 25px;
+  background-image: linear-gradient(
+      110deg,
+      white 0%,
+      white 50%,
+      transparent 50%
+    ),
+    url("../../imgz/2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.new_coche_form h3 {
+  font-size: 30px;
+  text-align: center;
+  color: var(--min-color);
+  text-transform: uppercase;
+  margin: 25px;
+}
+.continer {
+  width: 70%;
+  display: flex;
+  padding: 25px 80px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.form_control {
+  position: relative;
+}
+label {
+  color: var(--min-color);
+}
+input:placeholder-shown + label,
+textarea:placeholder-shown + label {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  left: 12px;
+}
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+  position: absolute;
+  top: 0px;
+  opacity: 1;
+  left: 12px;
+}
+.select_conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.select_conteiner div {
+  display: flex;
+  gap: 20px;
+}
+.select_conteiner select {
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.form_control input,
+.form_control textarea {
+  padding: 8px 12px;
+  width: 400px !important;
+  display: inline-block;
+  margin: 20px 0;
+  border: 1px solid var(--min-color);
+  resize: none;
+  outline: none;
+}
+.form_control textarea {
+  min-height: 80px;
+}

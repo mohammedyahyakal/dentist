@@ -1,0 +1,28 @@
+.bar {
+  box-shadow: 2px 5px 20px var(--bg-light-color);
+  padding: 24px 12px;
+  position: sticky;
+  left: 0;
+  top: 90px;
+  height: calc(100vh - 88px);
+}
+
+.bar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+/* .bar ul li {
+   text-align: center; 
+} */
+.bar ul li a {
+  color: var(--min-color);
+  font-size: 24px;
+  display: block;
+  border-radius: 5px;
+}
+.active {
+  color: #fff !important;
+  background-color: var(--min-color);
+}

@@ -1,0 +1,66 @@
+:root {
+  --min-color: #e8590c;
+  --light-min-color: #fd7e14;
+  --text-min-color: #fff4e6;
+  --bg-color: #212529;
+  --bg-light-color: #343a40;
+  --bg-text-color: #f1f3f5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--bg-text-color);
+  direction: rtl;
+}
+ul li .active {
+  color: #fff !important;
+  background-color: var(--min-color);
+  padding: 6px 10px;
+}
+ul li .active:hover,
+ul li a:hover {
+  background-color: var(--light-min-color);
+  color: #fff;
+  padding: 6px 10px;
+}
+.btn {
+  display: block;
+  background-color: var(--min-color);
+  color: #fff;
+  width: 400px;
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: var(--light-min-color);
+  box-shadow: 1px 3px 20px var(--text-min-color);
+}
+.btn-zmll {
+  width: 250px;
+  font-size: 20px;
+}
+.bb {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: var(--bg-color);
+}
+.centertext {
+  color: var(--min-color);
+  text-align: center;
+  font-size: 22px;
+}
