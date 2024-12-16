@@ -1,84 +1,48 @@
 {
   "patients": [
     {
-      "id": "1",
-      "name": " محمد كال",
-      "phone": "51856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "current"
-    },
-    {
-      "id": "4fa3",
-      "name": " احمد كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "waiting"
-    },
-    {
-      "id": "7cbf",
-      "name": " علي كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "waiting"
-    },
-    {
-      "id": "6b5b",
-      "name": " بكري كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "comming"
-    },
-    {
-      "id": "95c9",
-      "name": " امير كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "comming"
-    },
-    {
-      "id": "b4b5",
-      "name": " هند كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "waiting"
-    },
-    {
-      "id": "7ff9",
-      "name": " لينا كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "waiting"
-    },
-    {
-      "id": "d65f",
-      "name": " خالد كال",
-      "phone": "0951856752",
-      "blood": "o",
-      "booling": "مباشر",
-      "date": "12/15/2024",
-      "status": "waiting"
-    },
-    {
-      "id": "af6f",
-      "name": "king",
+      "id": "f93d",
+      "name": "محمد",
       "phone": "0951856752",
       "blood": "o",
       "booking": "مباشر",
-      "date": "12/15/2024",
+      "date": "12/20/2024",
+      "status": "comming"
+    },
+    {
+      "id": "dd68",
+      "name": "محمد",
+      "phone": "0951856752",
+      "blood": "o",
+      "booking": "مباشر",
+      "date": "12/19/2024",
+      "status": "comming"
+    },
+    {
+      "id": "9684",
+      "name": "محمد",
+      "phone": "0951856752",
+      "blood": "o",
+      "booking": "مباشر",
+      "date": "12/17/2024",
+      "status": "waiting"
+    },
+    {
+      "id": "320c",
+      "name": "محمد",
+      "phone": "0951856752",
+      "blood": "o",
+      "booking": "مباشر",
+      "date": "12/26/2024",
+      "status": "waiting"
+    },
+    {
+      "id": "bbec",
+      "name": "محمد",
+      "phone": "0951856752",
+      "blood": "o",
+      "booking": "مباشر",
+      "date": "12/26/2024",
       "status": "waiting"
     }
   ]

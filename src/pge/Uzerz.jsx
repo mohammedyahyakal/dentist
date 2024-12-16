@@ -11,6 +11,8 @@ function Patients() {
   const [phone, setPhone] = useState(null);
   const [kind, setKind] = useState("recent");
   const [blood, setBlood] = useState("o");
+  const [status, setstatus] = useState("comming");
+  const [date, setDate] = useState("2024-12-1");
 
   useEffect(() => {
     async function getPatients() {
@@ -27,9 +29,24 @@ function Patients() {
 
   function hendellAddpetinet(e) {
     e.preventDefault();
-    if (name.length < 3 || phone.length !== 10) {
-      toast.error("رقم الهاتف يجب ان يتالف من 10 خانات");
-      toast.error("اسم المريض يجب ان يتالف من ثلاثة احرف على الاقل");
+    if (
+      name.length < 3 ||
+      phone.length !== 10 ||
+      new Date(date).getTime() <
+        new Date(Date.now()).getTime() - 1000 * 60 * 60 * 24
+    ) {
+      if (phone.length !== 10) {
+        toast.error("رقم الهاتف يجب ان يتالف من 10 خانات");
+      }
+      if (name.length < 3) {
+        toast.error("اسم المريض يجب ان يتالف من ثلاثة احرف على الاقل");
+      }
+      if (
+        new Date(date).getTime() <
+        new Date(Date.now()).getTime() - 1000 * 60 * 60 * 24
+      ) {
+        toast.error("يرجى ادخال تاريخ صحيح");
+      }
       return;
     }
     try {
@@ -38,8 +55,8 @@ function Patients() {
         phone,
         blood,
         booking: "مباشر",
-        date: new Date(Date.now()).toLocaleDateString("en-US"),
-        status: "waiting",
+        date: new Date(date).toLocaleDateString("en-US"),
+        status: status,
       });
       toast.success("تم الاضافة بنجاح");
 
@@ -116,7 +133,26 @@ function Patients() {
                 <label htmlFor="kind">:زمرة الدم</label>
               </div>
             </div>
-
+            <div className={cl.select_conteiner}>
+              <div>
+                <select
+                  value={status}
+                  onChange={(e) => setstatus(e.target.value)}
+                  name="kind"
+                  id="kind"
+                >
+                  <option value={"comming"}>قادم</option>
+                  <option value={"waiting"}>انتظار</option>
+                </select>
+              </div>
+            </div>
+            <div className={cl.form_control}>
+              <input
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                type="date"
+              />
+            </div>
             <div className={cl.form_control}>
               <button className="btn btn-zmll">إضافة مريض</button>
             </div>
@@ -144,7 +180,7 @@ function Patients() {
         {filterdpatients.map((ele) => (
           <div key={ele.id} className={cl.coche}>
             <div>{ele.name}</div>
-            <div>009639{ele.phone}</div>
+            <div>{ele.phone}</div>
             <div>{ele.blood}</div>
             <div>
               {ele.status === "waiting"

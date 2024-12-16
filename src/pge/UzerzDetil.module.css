@@ -72,6 +72,7 @@ textarea:not(:placeholder-shown) + label {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 }
 .select_conteiner div {
   display: flex;

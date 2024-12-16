@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import cl from "./UzerzDetil.module.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 function UzerDetil() {
   const [patients, setPatients] = useState([]);
@@ -9,10 +9,15 @@ function UzerDetil() {
   const [phone, setPhone] = useState(null);
   const [kind, setKind] = useState("recent");
   const [blood, setBlood] = useState("o");
+  const [date, setDate] = useState("2024-12-1");
+  const [status, setstatus] = useState("comming");
   const param = useParams();
+  const nev = useNavigate();
   useEffect(() => {
     async function getPatients() {
-      const data = await axios.get("http://localhost:8000/patients/" + param.id);
+      const data = await axios.get(
+        "http://localhost:8000/patients/" + param.id
+      );
 
       setName(data.data.name);
       setPhone(data.data.phone);
@@ -42,9 +47,24 @@ function UzerDetil() {
   }
   function hendellAddpetinet(e) {
     e.preventDefault();
-    if (name.length < 3 || phone.length !== 10) {
-      toast.error("رقم الهاتف يجب ان يتالف من 10 خانات");
-      toast.error("اسم المريض يجب ان يتالف من ثلاثة احرف على الاقل");
+    if (
+      name.length < 3 ||
+      phone.length !== 10 ||
+      new Date(date).getTime() <
+        new Date(Date.now()).getTime() - 1000 * 60 * 60 * 24
+    ) {
+      if (phone.length !== 10) {
+        toast.error("رقم الهاتف يجب ان يتالف من 10 خانات");
+      }
+      if (name.length < 3) {
+        toast.error("اسم المريض يجب ان يتالف من ثلاثة احرف على الاقل");
+      }
+      if (
+        new Date(date).getTime() <
+        new Date(Date.now()).getTime() - 1000 * 60 * 60 * 24
+      ) {
+        toast.error("يرجى ادخال تاريخ صحيح");
+      }
       return;
     }
     try {
@@ -53,8 +73,8 @@ function UzerDetil() {
         phone,
         blood,
         booking: "مباشر",
-        date: new Date().now,
-        status: "waiting",
+        date: new Date(date).toLocaleDateString("en-US"),
+        status: status,
       });
       toast.success("تم التعديل بنجاح");
     } catch (e) {
@@ -117,7 +137,26 @@ function UzerDetil() {
               <label htmlFor="kind">:زمرة الدم</label>
             </div>
           </div>
-
+          <div className={cl.select_conteiner}>
+            <div>
+              <select
+                value={status}
+                onChange={(e) => setstatus(e.target.value)}
+                name="kind"
+                id="kind"
+              >
+                <option value={"comming"}>قادم</option>
+                <option value={"waiting"}>انتظار</option>
+              </select>
+            </div>
+          </div>
+          <div className={cl.form_control}>
+            <input
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              type="date"
+            />
+          </div>
           <div className={cl.form_control}>
             <button className="btn btn-zmll">حفظ</button>
           </div>
@@ -132,6 +171,9 @@ function UzerDetil() {
           نقل المريض الى قسم المرضى الحاليين
         </button>
       )}
+      <button onClick={() => nev("/")} className="btn">
+        الخلف
+      </button>
     </div>
   );
 }
